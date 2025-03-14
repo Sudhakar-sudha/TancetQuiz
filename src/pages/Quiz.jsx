@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 const Quiz = () => {
   const [username, setUsername] = useState("");
   const [selectedOption, setSelectedOption] = useState({});
-  const [timeLeft, setTimeLeft] = useState(120);
+  const [timeLeft, setTimeLeft] = useState(7200);
   const navigate = useNavigate();
 
    // Generate 100 questions dynamically
@@ -39,7 +39,7 @@ const Quiz = () => {
     const interval = setInterval(() => {
       const quizStartTime = parseInt(localStorage.getItem("quizStartTime"), 10);
       const elapsed = Math.floor((Date.now() - quizStartTime) / 1000);
-      const remaining = Math.max(120 - elapsed, 0);
+      const remaining = Math.max(7200 - elapsed, 0);
 
       setTimeLeft(remaining);
 
@@ -130,12 +130,13 @@ const Quiz = () => {
       return updatedSelection;
     });
   };
-
   const formatTime = (seconds) => {
-    const m = Math.floor(seconds / 60);
+    const h = Math.floor(seconds / 3600);
+    const m = Math.floor((seconds % 3600) / 60);
     const s = seconds % 60;
-    return `${m.toString().padStart(2, "0")}:${s.toString().padStart(2, "0")}`;
+    return `${h.toString().padStart(2, "0")}:${m.toString().padStart(2, "0")}:${s.toString().padStart(2, "0")}`;
   };
+  
 
   return (
     <div className="h-screen flex flex-col bg-green-100">

@@ -91,7 +91,7 @@ const Login = () => {
 
       if (response.ok) {
         localStorage.setItem("username", data.username);
-        navigate("/quiz"); // Redirect to quiz page
+        navigate("/termsandcondition"); // Redirect to quiz page
       } else {
         alert(data.message || "Invalid login credentials");
       }
