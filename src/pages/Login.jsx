@@ -39,6 +39,7 @@ const Login = () => {
         const checkData = await checkResponse.json();
 
         if (checkData.alreadySubmitted) {
+          localStorage.setItem("quizCompleted", "true");
           navigate("/result"); // Redirect to results if quiz is already submitted
         } else {
           navigate("/termsandcondition"); // Otherwise, go to Terms & Conditions

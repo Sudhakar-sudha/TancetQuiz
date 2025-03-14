@@ -28,7 +28,9 @@ const Quiz = () => {
 
     const completed = localStorage.getItem("quizCompleted");
     if (completed === "true") {
+      alert("You have already written the test!");
       navigate("/thank-you");
+      return;
     }
 
     const startTime = localStorage.getItem("quizStartTime");
