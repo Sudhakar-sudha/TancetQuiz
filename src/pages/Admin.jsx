@@ -12,7 +12,7 @@ const Admin = () => {
   }, []);
 
   const fetchUsers = async () => {
-    const res = await fetch("http://localhost:3000/users", {
+    const res = await fetch("https://backendsampleclg.onrender.com/users", {
       headers: { "auth-token": token },
     });
     const data = await res.json();
@@ -21,7 +21,7 @@ const Admin = () => {
 
   const handleAddUser = async (e) => {
     e.preventDefault();
-    await fetch("http://localhost:3000/users", {
+    await fetch("https://backendsampleclg.onrender.com/users", {
       method: "POST",
       headers: { "Content-Type": "application/json", "auth-token": token },
       body: JSON.stringify({ username, password }),
@@ -40,7 +40,7 @@ const Admin = () => {
     e.preventDefault();
     if (!editingUser) return;
 
-    await fetch(`http://localhost:3000/users/${editingUser._id}`, {
+    await fetch(`https://backendsampleclg.onrender.com/users/${editingUser._id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json", "auth-token": token },
       body: JSON.stringify({ username, password }),
@@ -53,7 +53,7 @@ const Admin = () => {
   };
 
   const handleDeleteUser = async (id) => {
-    await fetch(`http://localhost:3000/users/${id}`, {
+    await fetch(`https://backendsampleclg.onrender.com/users/${id}`, {
       method: "DELETE",
       headers: { "auth-token": token },
     });
