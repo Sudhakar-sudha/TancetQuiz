@@ -7,6 +7,8 @@ const Logout = () => {
     localStorage.removeItem("username"); // Remove stored user
     localStorage.removeItem("quizStartTime"); // Remove stored user
     localStorage.removeItem("quizCompleted");
+    
+    localStorage.removeItem("quizStartTime");
     navigate("/"); // Redirect to login
   };
 

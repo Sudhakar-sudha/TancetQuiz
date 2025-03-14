@@ -8,16 +8,16 @@ const TermsAndCondition = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-6">
-      <div className="bg-white shadow-lg rounded-lg p-8 max-w-4xl">
-        <h2 className="text-3xl font-bold text-center text-blue-600 mb-4">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-green-600 p-6">
+      <div className="bg-red-600 shadow-lg rounded-lg p-8 max-w-4xl">
+        <h2 className="text-3xl font-bold text-center text-white mb-4">
           Terms & Conditions
         </h2>
-        <p className="text-gray-700 text-center mb-6">
+        <p className="text-white text-center mb-6">
           Please read the following rules carefully before starting the TANCET Mock Test.
         </p>
 
-        <ul className="list-disc text-gray-700 space-y-2 pl-6 mb-6">
+        <ul className="list-disc text-white space-y-2 pl-6 mb-6">
           <li>The quiz consists of multiple-choice questions.</li>
           <li>Each question has only one correct answer.</li>
           <li>A one-fourth negative mark will be deducted for incorrect answers.</li>

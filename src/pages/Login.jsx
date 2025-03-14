@@ -1,4 +1,6 @@
-// import { useState } from "react";
+
+
+// import { useState, useEffect } from "react";
 // import { useNavigate } from "react-router-dom";
 
 // const Login = () => {
@@ -6,24 +8,35 @@
 //   const [password, setPassword] = useState("");
 //   const navigate = useNavigate();
 
+//   // Redirect if user is already logged in
+//   useEffect(() => {
+//     const storedUser = localStorage.getItem("username");
+//     if (storedUser) {
+//       navigate("/quiz");
+//     }
+//   }, [navigate]);
+
 //   const handleLogin = async (e) => {
 //     e.preventDefault();
-    
-//     const response = await fetch("http://localhost:3000/login", {
-//       method: "POST",
-//       headers: { "Content-Type": "application/json" },
-//       body: JSON.stringify({ username, password }),
-//     });
 
-//     const data = await response.json();
+//     try {
+//       const response = await fetch("https://backendsampleclg.onrender.com/login", {
+//         method: "POST",
+//         headers: { "Content-Type": "application/json" },
+//         body: JSON.stringify({ username, password }),
+//       });
 
-//     if (response.ok) {
-//           // Save username in localStorage
-//           localStorage.setItem("username", data.username);
- 
-//       navigate("/quiz");
-//     } else {
-//       alert(data.message);
+//       const data = await response.json();
+
+//       if (response.ok) {
+//         localStorage.setItem("username", data.username);
+//         navigate("/termsandcondition"); // Redirect to quiz page
+//       } else {
+//         alert(data.message || "Invalid login credentials");
+//       }
+//     } catch (error) {
+//       console.error("Login error:", error);
+//       alert("Server error. Please try again later.");
 //     }
 //   };
 
@@ -38,6 +51,7 @@
 //             value={username}
 //             onChange={(e) => setUsername(e.target.value)}
 //             className="w-full px-3 py-2 border rounded"
+//             required
 //           />
 //           <input
 //             type="password"
@@ -45,6 +59,7 @@
 //             value={password}
 //             onChange={(e) => setPassword(e.target.value)}
 //             className="w-full px-3 py-2 border rounded"
+//             required
 //           />
 //           <button
 //             type="submit"
@@ -63,6 +78,7 @@
 
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { FaUser, FaLock } from "react-icons/fa"; // Icons for username & password
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -102,29 +118,39 @@ const Login = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="bg-white p-6 rounded-lg shadow-lg w-96">
-        <h2 className="text-2xl font-bold text-center mb-4">Login</h2>
-        <form onSubmit={handleLogin} className="space-y-4">
-          <input
-            type="text"
-            placeholder="Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            className="w-full px-3 py-2 border rounded"
-            required
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="w-full px-3 py-2 border rounded"
-            required
-          />
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-green-500 to-green-300 p-6">
+      <div className="bg-white p-10 rounded-lg shadow-lg w-auto h-auto ">
+        <h2 className="text-3xl font-bold text-center text-green-600 mb-4">Login</h2>
+        <p className="text-black text-center mb-6">Enter your credentials to Attend the Mock Test</p>
+
+        <form onSubmit={handleLogin} className="space-y-5">
+          <div className="relative">
+            <FaUser className="absolute left-3 top-3 text-gray-500" />
+            <input
+              type="text"
+              placeholder="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              className="w-full pl-10 pr-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              required
+            />
+          </div>
+
+          <div className="relative">
+            <FaLock className="absolute left-3 top-3 text-gray-500" />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full pl-10 pr-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              required
+            />
+          </div>
+
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
+            className="w-full bg-green-500 text-white py-2 rounded-lg font-semibold text-lg transition duration-300 hover:bg-blue-600 focus:ring-2 focus:ring-blue-300"
           >
             Login
           </button>
