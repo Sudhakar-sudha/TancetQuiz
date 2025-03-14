@@ -3,6 +3,26 @@
 
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2';
+import myImage1 from "/thumbsup.gif"
+
+const showPopup = () => {
+  Swal.fire({
+      title: 'Submitted Successfullyy ! ',
+      text: '',
+    
+      imageUrl: myImage1,
+      imageWidth: 200,
+      imageHeight: 200,
+      imageAlt: 'Success Image',
+      confirmButtonText: 'OK',
+      customClass: {
+          popup: 'rounded-lg shadow-lg',
+          title: 'text-lg font-bold',
+          confirmButton: 'bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded'
+      }
+  });
+};
 
 const Quiz = () => {
   const [username, setUsername] = useState("");
@@ -82,8 +102,10 @@ const Quiz = () => {
       localStorage.removeItem("quizData");
       localStorage.removeItem("quizStartTime");
       localStorage.removeItem("username");
-      navigate("/thank-you");
-
+showPopup();
+setTimeout(() => {
+  navigate("/thank-you"); // Redirect after 1.5 seconds
+}, 1500);
     } catch (error) {
       console.error("Error auto-submitting quiz:", error);
       alert(error.message || "Submission failed");
@@ -117,7 +139,10 @@ const Quiz = () => {
       localStorage.removeItem("quizData");
       localStorage.removeItem("quizStartTime");
       localStorage.removeItem("username");
-      navigate("/thank-you");
+      showPopup();
+      setTimeout(() => {
+        navigate("/thank-you"); // Redirect after 1.5 seconds
+      }, 1500);
 
     } catch (error) {
       console.error("Error submitting quiz:", error);
