@@ -1,5 +1,24 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2';
+import myImage1 from "/Register.gif"
+const showPopup = () => {
+  Swal.fire({
+      title: 'Register Successfully ',
+      text: '',
+    
+      imageUrl: myImage1,
+      imageWidth: 200,
+      imageHeight: 200,
+      imageAlt: 'Success Image',
+      confirmButtonText: 'OK',
+      customClass: {
+          popup: 'rounded-lg shadow-lg',
+          title: 'text-lg font-bold',
+          confirmButton: 'bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded'
+      }
+  });
+};
 
 const Register = () => {
   const [username, setUsername] = useState("");
@@ -24,7 +43,8 @@ const Register = () => {
     const data = await response.json();
 
     if (response.ok) {
-      alert("Registration successful! Please login.");
+      // alert("Registration successful! Please login.");
+      showPopup();
       navigate("/");
     } else {
       alert(data.message);
