@@ -15,7 +15,7 @@ const Register = () => {
       return;
     }
 
-    const response = await fetch("https://backendsampleclg.onrender.com/register", {
+    const response = await fetch("http://localhost:3000/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password }),
@@ -32,7 +32,7 @@ const Register = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-green-500 to-green-300 ">
       <div className="bg-white p-6 rounded-lg shadow-lg w-96">
         <h2 className="text-2xl font-bold text-center mb-4">Register</h2>
         <form onSubmit={handleRegister} className="space-y-4">
@@ -62,17 +62,12 @@ const Register = () => {
           />
           <button
             type="submit"
-            className="w-full bg-green-500 text-white py-2 rounded hover:bg-green-600"
+            className="w-full bg-blue-500 text-white py-2 rounded hover:bg-green-600"
           >
             Register
           </button>
         </form>
-        <p className="text-center mt-4">
-          Already have an account?{" "}
-          <a href="/" className="text-blue-500 hover:underline">
-            Login
-          </a>
-        </p>
+     
       </div>
     </div>
   );

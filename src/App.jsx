@@ -64,12 +64,14 @@ import AdminLogin from "./pages/AdminLogin";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import TermsAndCondition from "./pages/TermsandCondition";
 import Result from "./pages/Result";
+import GetStartedPage from "./pages/GetStarted";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<GetStartedPage />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/register" element={<Register />} />
