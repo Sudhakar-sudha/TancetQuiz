@@ -61,7 +61,7 @@ export default function GetStartedPage() {
 
   // Fetch total registered users
   useEffect(() => {
-    fetch("http://localhost:3000/user-count")
+    fetch("https://backendsampleclg.onrender.com/user-count")
       .then((res) => res.json())
       .then((data) => setUserCount(data.totalUsers))
       .catch((error) => console.error("Error fetching user count:", error));
@@ -69,7 +69,7 @@ export default function GetStartedPage() {
 
   // Fetch quiz submission count
   useEffect(() => {
-    fetch("http://localhost:3000/api/quiz-submissions/count")
+    fetch("https://backendsampleclg.onrender.com/api/quiz-submissions/count")
       .then((res) => res.json())
       .then((data) => setSubmissionCount(data.totalUsersCompleted))
       .catch((error) => console.error("Error fetching submission count:", error));
