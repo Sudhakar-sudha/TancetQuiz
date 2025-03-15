@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+import { toast } from "react-toastify"; // Import toast for better alerts
+
 const Admin = () => {
   const [users, setUsers] = useState([]);
   const [username, setUsername] = useState("");
@@ -53,12 +55,27 @@ const Admin = () => {
   };
 
   const handleDeleteUser = async (id) => {
-    await fetch(`https://backendsampleclg.onrender.com/users/${id}`, {
-      method: "DELETE",
-      headers: { "auth-token": token },
-    });
-    fetchUsers();
+    try {
+      const response = await fetch(`https://backendsampleclg.onrender.com/users/${id}`, {
+        method: "DELETE",
+        headers: { "auth-token": token },
+      });
+  
+      const data = await response.json();
+  
+      if (response.ok) {
+        toast.success("User deleted successfully!");
+        fetchUsers(); // Refresh the user list
+      } else {
+        toast.error(data.error || "Failed to delete user");
+      }
+    } catch (error) {
+      toast.error("Error deleting user. Try again later.");
+      console.error("Delete Error:", error);
+    }
   };
+  
+  
 
   return (
     <div className="p-6">
