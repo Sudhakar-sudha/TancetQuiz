@@ -107,7 +107,7 @@ export default function GetStartedPage() {
           {/* Login & Register Buttons */}
           <div className="mt-6 flex flex-col gap-4">
             <button
-              onClick={() => navigate("/login")}
+              onClick={() => navigate("/waiting")}
               className="w-full py-3 text-white font-semibold rounded-lg bg-green-500 hover:bg-green-600 transition duration-300"
             >
               Login

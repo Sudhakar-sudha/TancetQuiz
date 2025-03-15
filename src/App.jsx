@@ -65,6 +65,7 @@ import ProtectedRoute from "./pages/ProtectedRoute";
 import TermsAndCondition from "./pages/TermsandCondition";
 import Result from "./pages/Result";
 import GetStartedPage from "./pages/GetStarted";
+import WaitingPage from "./pages/Waiting";
 
 function App() {
   return (
@@ -78,6 +79,7 @@ function App() {
         <Route path="/thank-you" element={<ThankYou />} />
         <Route path="/admin-login" element={<AdminLogin />} />
         <Route path="/result" element={<Result />} />
+        <Route path="/waiting" element={<WaitingPage   />} />
         <Route path="/termsandcondition" element={<TermsAndCondition />} />
         {/* Protected Admin Route */}
         <Route element={<ProtectedRoute />}>
