@@ -108,13 +108,13 @@ export default function GetStartedPage() {
           <div className="mt-6 flex flex-col gap-4">
             <button
               onClick={() => navigate("/waiting")}
-              className="w-full py-3 text-white font-semibold rounded-lg bg-green-500 hover:bg-green-600 transition duration-300"
+              className="w-full py-3 cursor-pointer text-white font-semibold rounded-lg bg-green-500 hover:bg-green-600 transition duration-300"
             >
               Login
             </button>
             <button
               onClick={() => navigate("/register")}
-              className="w-full py-3 text-white font-semibold rounded-lg bg-blue-500 hover:bg-blue-600 transition duration-300"
+              className="w-full py-3 cursor-pointer text-white font-semibold rounded-lg bg-blue-500 hover:bg-blue-600 transition duration-300"
             >
               Register
             </button>

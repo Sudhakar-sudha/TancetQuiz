@@ -28,6 +28,7 @@ const Quiz = () => {
   const [username, setUsername] = useState("");
   const [selectedOption, setSelectedOption] = useState({});
   const [timeLeft, setTimeLeft] = useState(7200);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
 
    // Generate 100 questions dynamically
@@ -113,6 +114,10 @@ setTimeout(() => {
   };
 
   const handleSubmit = async () => {
+    if (isSubmitting) return; // Prevent multiple submissions
+
+    setIsSubmitting(true); // Set loading state
+  
     try {
       const storedUsername = localStorage.getItem("username") || "Guest";
       const storedQuizData = JSON.parse(localStorage.getItem("quizData")) || { selectedOption: {} };
@@ -147,6 +152,9 @@ setTimeout(() => {
     } catch (error) {
       console.error("Error submitting quiz:", error);
       alert(error.message || "Submission failed");
+    }
+    finally {
+      setIsSubmitting(false); // Reset loading state
     }
   };
 
@@ -203,9 +211,20 @@ setTimeout(() => {
             ))}
           </div>
 
-          <button className="mt-4 px-4 py-2 bg-green-500 text-white rounded-lg" onClick={handleSubmit}>
+          {/* <button className="mt-4 cursor-pointer px-4 py-2 bg-green-500 text-white rounded-lg" onClick={handleSubmit}>
             Submit Quiz
-          </button>
+          </button> */}
+
+<button
+  className={`mt-4 cursor-pointer px-4 py-2 ${
+    isSubmitting ? "bg-gray-400" : "bg-green-500"
+  } text-white rounded-lg`}
+  onClick={handleSubmit}
+  disabled={isSubmitting}
+>
+  {isSubmitting ? "Submitting..." : "Submit Quiz"}
+</button>
+
         </div>
       </div>
     </div>
