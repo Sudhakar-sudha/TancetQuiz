@@ -144,7 +144,6 @@
 
 // export default ThankYou;
 
-
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import confetti from "canvas-confetti";
@@ -168,19 +167,14 @@ const showPopup = () => {
 const ThankYou = () => {
   const [username, setUsername] = useState("");
   const [feedback, setFeedback] = useState("");
-  const [loading, setLoading] = useState(false); // Loading state
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const storedUsername = localStorage.getItem("username");
     if (storedUsername) setUsername(storedUsername);
 
-    // Confetti animation
     setTimeout(() => {
-      confetti({
-        particleCount: 150,
-        spread: 100,
-        origin: { y: 0.6 },
-      });
+      confetti({ particleCount: 100, spread: 90, origin: { y: 0.6 } });
     }, 500);
   }, []);
 
@@ -194,7 +188,7 @@ const ThankYou = () => {
       return;
     }
 
-    setLoading(true); // Start loading
+    setLoading(true);
 
     try {
       const response = await fetch("https://backendsampleclg.onrender.com/api/feedback", {
@@ -205,93 +199,47 @@ const ThankYou = () => {
 
       if (response.ok) {
         showPopup();
-        setFeedback(""); // Clear input after success
+        setFeedback("");
       } else {
         Swal.fire("Error!", "Failed to submit feedback.", "error");
       }
     } catch (error) {
       Swal.fire("Error!", "Something went wrong.", "error");
     } finally {
-      setLoading(false); // Stop loading
+      setLoading(false);
     }
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-green-500 to-green-300 text-white px-4">
-      {/* Animated Title */}
-      <motion.h1
-        className="text-5xl font-extrabold text-white text-center"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 2, ease: "easeOut" }}
-      >
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-purple-500 to-indigo-500 text-white px-6">
+      <motion.h1 className="text-5xl font-extrabold text-center" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.5 }}>
         🎉 Thank You! 🎉
       </motion.h1>
 
-      {/* Subtitle */}
-      <motion.p
-        className="text-2xl mt-4 text-center"
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1, duration: 1 }}
-      >
-        All the best for your{" "}
-        <span className="font-semibold text-blue-900 text-3xl">TANCET exam!</span>
+      <motion.p className="text-2xl mt-4 text-center" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 1 }}>
+        Best wishes for your <span className="font-bold text-yellow-300">TANCET exam!</span>
       </motion.p>
 
-      {/* Winner Announcement */}
-      <motion.p
-        className="text-lg mt-4 bg-white text-black px-6 py-3 rounded-lg shadow-md font-medium"
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.5, duration: 1 }}
-      >
-        🏆 The winner’s result will be displayed on the homepage at{" "}
-        <span className="font-bold text-blue-700">6 PM</span>, along with their name.
+      <motion.p className="text-lg mt-4 bg-white text-black px-6 py-3 rounded-lg shadow-md" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1, duration: 1 }}>
+        🏆 Winner's results will be displayed on the homepage at <span className="font-bold text-blue-600">6 PM</span>.
       </motion.p>
 
-      {/* Feedback Form */}
-      <motion.div
-        className="mt-6 bg-white p-6 rounded-lg shadow-xl w-full max-w-lg"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.5, duration: 1 }}
-      >
-        <h2 className="text-lg font-bold text-gray-800 text-center mb-3">
-          📝 Feedback for the TANCET Quiz
-        </h2>
-        <p className="text-sm text-gray-600 text-center mb-4">
-          Was the quiz experience good or bad? Share your suggestions to help improve this website.
-        </p>
+      <motion.p className="text-lg mt-4 bg-white text-black px-6 py-3 rounded-lg shadow-md" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.2, duration: 1 }}>
+        If you know your score, logout and login again with your details to view your score.
+      </motion.p>
 
-        <textarea
-          className="w-full p-3 border rounded-lg mt-2 text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-400"
-          placeholder="Enter your feedback..."
-          value={feedback}
-          onChange={(e) => setFeedback(e.target.value)}
-          rows={4}
-        ></textarea>
+      <motion.div className="mt-6 bg-white p-6 rounded-lg shadow-lg w-full max-w-lg" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.5, duration: 1 }}>
+        <h2 className="text-lg font-bold text-gray-800 text-center mb-3">📝 Feedback for the TANCET Quiz</h2>
+        <p className="text-sm text-gray-600 text-center mb-4">Share your suggestions to help improve this website.</p>
 
-        <button
-          className={`w-full mt-4 py-2 rounded text-white font-semibold transition ${
-            loading
-              ? "bg-gray-400 cursor-not-allowed"
-              : "bg-blue-600 hover:bg-blue-800 cursor-pointer"
-          }`}
-          onClick={handleSubmit}
-          disabled={loading}
-        >
+        <textarea className="w-full p-3 border rounded-lg mt-2 text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-400" placeholder="Enter your feedback..." value={feedback} onChange={(e) => setFeedback(e.target.value)} rows={4}></textarea>
+
+        <button className={`w-full mt-4 py-2 rounded text-white font-semibold transition ${loading ? "bg-gray-400 cursor-not-allowed" : "bg-blue-600 hover:bg-blue-800"}`} onClick={handleSubmit} disabled={loading}>
           {loading ? "Submitting..." : "Submit Feedback"}
         </button>
       </motion.div>
 
-      {/* Logout Button */}
-      <motion.div
-        className="mt-6"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 2, duration: 1 }}
-      >
+      <motion.div className="mt-6" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 2, duration: 1 }}>
         <Logout />
       </motion.div>
     </div>
