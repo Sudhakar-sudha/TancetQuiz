@@ -47,6 +47,7 @@ const TermsAndCondition = () => {
     "Do not leave the quiz page once the test has started.",
     "Once you submit the quiz, you cannot change your answers, so review them carefully before submission.",
     "Avoid malpractice—do not refer to other websites for answers, as it will ultimately be a disadvantage to you.",
+    " Note : The quiz questions have been created by Sudhakar with reference to previous years' TANCET question papers, IndiaBix, GeeksforGeeks, and ChatGPT."
   ].map((point, index) => (
     <li
       key={index}
