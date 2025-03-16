@@ -4,19 +4,19 @@ import myImage1 from "/allthebest.gif"
 
 const showPopup = () => {
   Swal.fire({
-      title: 'Start The Exam ',
-      text: '',
-    
-      imageUrl: myImage1,
-      imageWidth: 200,
-      imageHeight: 200,
-      imageAlt: 'Success Image',
-      confirmButtonText: 'OK',
-      customClass: {
-          popup: 'rounded-lg shadow-lg',
-          title: 'text-lg font-bold',
-          confirmButton: 'bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded'
-      }
+    title: 'Start The Exam ',
+    text: '',
+
+    imageUrl: myImage1,
+    imageWidth: 200,
+    imageHeight: 200,
+    imageAlt: 'Success Image',
+    confirmButtonText: 'OK',
+    customClass: {
+      popup: 'rounded-lg shadow-lg',
+      title: 'text-lg font-bold',
+      confirmButton: 'bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded'
+    }
   });
 };
 
@@ -39,13 +39,16 @@ const TermsAndCondition = () => {
         </p>
 
         <ul className="list-disc text-black space-y-2 pl-6 mb-6">
-          <li>The quiz consists of multiple-choice questions.</li>
-          <li>Each question has only one correct answer.</li>
-          <li>A one-fourth negative mark will be deducted for incorrect answers.</li>
-          <li>You must complete the quiz within the given time limit; otherwise, it will be submitted automatically.</li>
-          <li>Results will be displayed after 6 PM.</li>
-          <li>Do not refresh or leave the quiz page once the test has started.</li>
-          <li>Any form of cheating may result in disqualification.</li>
+          <ul>
+            <li>The quiz consists of multiple-choice questions.</li>
+            <li>Each question has only one correct answer. Once you select an option, you cannot deselect it, but it is changeable.</li>
+            <li>A penalty of one-fourth of the total marks for a question will be deducted for each incorrect answer, so be careful.</li>
+            <li>You must complete the quiz within the given time limit; otherwise, it will be submitted automatically.</li>
+            <li>Do not leave the quiz page once the test has started.</li>
+            <li>Once you submit the quiz, you cannot change your answers, so review them carefully before submission.</li>
+            <li>Avoid malpractice—do not refer to other websites for answers, as it will ultimately be a disadvantage to you.</li>
+          </ul>
+
         </ul>
 
         <div className="flex justify-center">
