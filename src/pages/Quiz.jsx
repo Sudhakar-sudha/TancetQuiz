@@ -183,7 +183,7 @@ setTimeout(() => {
 
       <div className="flex flex-1 h-full">
         <div className="w-1/2 h-full overflow-y-auto p-4 bg-white shadow-lg">
-          <iframe src="/MCA 2024.pdf" className="w-full h-full rounded-lg shadow-lg" title="Quiz PDF" />
+          <iframe src="/TANCET.pdf" className="w-full h-full rounded-lg shadow-lg" title="Quiz PDF" />
         </div>
 
         <div className="w-1/2 h-full p-6 overflow-y-auto bg-white">

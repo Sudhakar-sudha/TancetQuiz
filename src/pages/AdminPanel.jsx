@@ -34,7 +34,7 @@ import Admin from "./Admin";
 import AnswerGiving from "./AnswerGiving";
 import UserResult from "./UserResult";
 import { useNavigate } from "react-router-dom";
-
+import Feedback from "./Feedback";
 const AdminPanel = () => {
   const navigate = useNavigate();
 
@@ -61,6 +61,9 @@ const AdminPanel = () => {
     <Link to="/admin/results" className="text-lg font-semibold  hover:bg-amber-600 px-4 py-2 rounded-lg transition">
       Check Results
     </Link>
+    <Link to="/admin/feedback" className="text-lg font-semibold  hover:bg-amber-600 px-4 py-2 rounded-lg transition">
+      Feedbacks
+    </Link>
   </div>
 
   {/* Right Section - Logout Button */}
@@ -79,6 +82,7 @@ const AdminPanel = () => {
           <Route index element={<Admin />} /> {/* Default Page */}
           <Route path="answers" element={<AnswerGiving />} />
           <Route path="results" element={<UserResult />} />
+          <Route path="feedback" element={<Feedback />} />
         </Routes>
       </div>
     </div>
