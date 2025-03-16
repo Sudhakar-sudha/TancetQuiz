@@ -102,7 +102,7 @@ const Quiz = () => {
       localStorage.setItem("quizCompleted", "true");
       localStorage.removeItem("quizData");
       localStorage.removeItem("quizStartTime");
-      localStorage.removeItem("username");
+      // localStorage.removeItem("username");
 showPopup();
 setTimeout(() => {
   navigate("/thank-you"); // Redirect after 1.5 seconds
@@ -143,7 +143,7 @@ setTimeout(() => {
       localStorage.setItem("quizCompleted", "true");
       localStorage.removeItem("quizData");
       localStorage.removeItem("quizStartTime");
-      localStorage.removeItem("username");
+      // localStorage.removeItem("username");
       showPopup();
       setTimeout(() => {
         navigate("/thank-you"); // Redirect after 1.5 seconds
