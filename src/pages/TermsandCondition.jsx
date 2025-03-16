@@ -38,18 +38,24 @@ const TermsAndCondition = () => {
           Please read the following rules carefully before starting the TANCET Mock Test.
         </p>
 
-        <ul className="list-disc text-black space-y-2 pl-6 mb-6">
-          <ul>
-            <li>The quiz consists of multiple-choice questions.</li>
-            <li>Each question has only one correct answer. Once you select an option, you cannot deselect it, but it is changeable.</li>
-            <li>A penalty of one-fourth of the total marks for a question will be deducted for each incorrect answer, so be careful.</li>
-            <li>You must complete the quiz within the given time limit; otherwise, it will be submitted automatically.</li>
-            <li>Do not leave the quiz page once the test has started.</li>
-            <li>Once you submit the quiz, you cannot change your answers, so review them carefully before submission.</li>
-            <li>Avoid malpractice—do not refer to other websites for answers, as it will ultimately be a disadvantage to you.</li>
-          </ul>
-
-        </ul>
+        <ul className="list-disc text-black space-y-3 pl-6 mb-6">
+  {[
+    "The quiz consists of multiple-choice questions.",
+    "Each question has only one correct answer. Once you select an option, you cannot deselect it, but it is changeable.",
+    "A penalty of one-fourth of the total marks for a question will be deducted for each incorrect answer, so be careful.",
+    "You must complete the quiz within the given time limit; otherwise, it will be submitted automatically.",
+    "Do not leave the quiz page once the test has started.",
+    "Once you submit the quiz, you cannot change your answers, so review them carefully before submission.",
+    "Avoid malpractice—do not refer to other websites for answers, as it will ultimately be a disadvantage to you.",
+  ].map((point, index) => (
+    <li
+      key={index}
+      className="cursor-pointer text-lg hover:text-blue-600 transition duration-300"
+    >
+      {point}
+    </li>
+  ))}
+</ul>
 
         <div className="flex justify-center">
           <button
