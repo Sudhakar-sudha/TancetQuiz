@@ -71,7 +71,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/loginusersudha" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/" element={<GetStartedPage />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/quiz" element={<Quiz />} />
