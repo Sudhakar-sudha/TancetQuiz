@@ -182,7 +182,20 @@ const WinnersPage = () => {
           ))}
         </div>
       </div>
-
+     {/* All the Best Card (Newly Added) */}
+     <motion.div
+        className="bg-white text-black text-center p-6 rounded-2xl shadow-lg mt-12 max-w-3xl w-full"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1 }}
+      >
+        <h2 className="text-3xl font-extrabold text-blue-700">
+          🎉 All the Best for Your TANCET Exam! 🎉
+        </h2>
+        <p className="text-lg mt-2">
+          Stay confident, give your best, and trust in your hard work! 🚀💪
+        </p>
+      </motion.div>
       {/* Feedback Section */}
       <motion.h2
         className="text-3xl font-bold text-center mt-12"
