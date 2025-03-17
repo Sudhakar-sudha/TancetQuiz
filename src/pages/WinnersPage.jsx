@@ -112,7 +112,7 @@ const badgeColors = ["bg-yellow-500", "bg-gray-500", "bg-orange-500", "bg-blue-5
 const WinnersPage = () => {
   useEffect(() => {
     const fireConfetti = () => {
-      confetti({ particleCount: 150, spread: 100, origin: { y: 0.6 } });
+      confetti({ particleCount: 950, spread: 150, origin: { y: 0.6 } });
     };
 
     fireConfetti();
@@ -130,7 +130,7 @@ const WinnersPage = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.5 }}
       >
-        🏆 TANCET Top 5 Winners 🏆
+        🏆 TANCET Mock Test Top 5 Winners 🏆
       </motion.h1>
 
       {/* Winners Section */}
