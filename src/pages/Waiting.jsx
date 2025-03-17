@@ -4,7 +4,7 @@ import Footer from "./Footer";
 
 export default function WaitingPage() {
   const navigate = useNavigate();
-  const targetTime = new Date("2025-03-17T14:00:00").getTime(); // March 17, 2 PM
+  const targetTime = new Date("2025-03-17T13:30:00").getTime(); // March 17, 2 PM
 
   const [timeLeft, setTimeLeft] = useState(targetTime - Date.now());
 
@@ -36,7 +36,7 @@ export default function WaitingPage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-yellow-400 to-orange-500 text-white">
       <h1 className="text-4xl font-bold mb-4">TANCET Test Starts Soon!</h1>
-      <p className="text-lg mb-6">The test will begin on March 17 at 2 PM.</p>
+      <p className="text-lg mb-6">The test will begin on March 17 at 1.30 PM.</p>
 
       <div className="flex space-x-4 text-center text-3xl font-semibold">
         <div className="bg-white text-gray-900 px-6 py-4 rounded-lg">
