@@ -99,6 +99,7 @@ const winners = [
   { name: "Satheesh Baabu", score: 61.25, rank: 3 },
   { name: "Padmapriya", score: 59.75, rank: 4 },
   { name: "Vinitha", score: 55.75, rank: 5 },
+  { name: "BalaVignesh", score: 53, rank: 5 },
 ];
 
 const feedbacks = [
