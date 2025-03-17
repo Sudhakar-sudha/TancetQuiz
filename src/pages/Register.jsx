@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2';
 import myImage1 from "/Register.gif"
+import Footer from "./Footer";
 const showPopup = () => {
   Swal.fire({
       title: 'Register Successfully ',
@@ -89,6 +90,7 @@ const Register = () => {
         </form>
      
       </div>
+      <Footer/>
     </div>
   );
 };

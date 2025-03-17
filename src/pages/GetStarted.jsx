@@ -53,6 +53,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import Footer from "./Footer";
 
 export default function GetStartedPage() {
   const navigate = useNavigate();
@@ -148,6 +149,7 @@ export default function GetStartedPage() {
           <p className="text-gray-600">Users have completed the quiz</p>
         </motion.div>
       </div>
+      <Footer/>
     </div>
   );
 }

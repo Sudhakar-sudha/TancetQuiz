@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2';
 import myImage1 from "/allthebest.gif"
+import Footer from "./Footer";
 
 const showPopup = () => {
   Swal.fire({
@@ -67,6 +68,7 @@ const TermsAndCondition = () => {
           </button>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

@@ -149,6 +149,7 @@ import { motion } from "framer-motion";
 import confetti from "canvas-confetti";
 import Logout from "./Logout";
 import Swal from "sweetalert2";
+import Footer from "./Footer";
 
 const showPopup = () => {
   Swal.fire({
@@ -242,6 +243,7 @@ const ThankYou = () => {
       <motion.div className="mt-6" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 2, duration: 1 }}>
         <Logout />
       </motion.div>
+      <Footer/>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 
 
 import { useState, useEffect } from "react";
+import Footer from "./Footer";
 
 const UserResult = () => {
   const [username, setUsername] = useState("");
@@ -135,6 +136,7 @@ const UserResult = () => {
           </tbody>
         </table>
       </div>
+      <Footer/>
     </div>
   );
 };

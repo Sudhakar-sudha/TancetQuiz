@@ -4,6 +4,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import confetti from "canvas-confetti";
+import Footer from "./Footer";
 
 const Result = () => {
   const [result, setResult] = useState(null);
@@ -113,6 +114,7 @@ const Result = () => {
           </a>
         </div>
       </div>
+    <Footer/>
     </div>
   );
 };

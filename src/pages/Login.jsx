@@ -4,6 +4,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaUser, FaLock } from "react-icons/fa"; // Icons for username & password
+import Footer from "./Footer";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -92,6 +93,7 @@ const Login = () => {
           </button>
         </form>
       </div>
+      <Footer/>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Footer from "./Footer";
 
 export default function WaitingPage() {
   const navigate = useNavigate();
@@ -57,6 +58,7 @@ export default function WaitingPage() {
       </div>
 
       <p className="mt-6 text-lg">Please wait patiently. The login will open automatically.</p>
+      <Footer/>
     </div>
   );
 }
