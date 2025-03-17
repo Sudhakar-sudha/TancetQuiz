@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import confetti from "canvas-confetti";
 import { motion } from "framer-motion";
-
+import Footer from "./Footer"
 const winners = [
   { name: "Manimala", score: 67.5, rank: 1 },
   { name: "Ramya Devi", score: 63.75, rank: 2 },
@@ -151,6 +151,7 @@ const WinnersPage = () => {
           ))}
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };
