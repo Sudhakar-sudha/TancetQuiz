@@ -30,7 +30,7 @@ const TermsAndCondition = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-green-600 p-6">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-green-600 p-6 pb-20 ">
       <div className="bg-white shadow-lg rounded-lg p-8 max-w-4xl">
         <h2 className="text-3xl font-bold text-center text-green-500 mb-4">
           Terms & Conditions
@@ -48,6 +48,7 @@ const TermsAndCondition = () => {
     "Do not leave the quiz page once the test has started.",
     "Once you submit the quiz, you cannot change your answers, so review them carefully before submission.",
     "Avoid malpractice—do not refer to other websites for answers, as it will ultimately be a disadvantage to you.",
+    "This quiz enforces fullscreen mode, prevents tab switching, disables right-click, restricts developer tools, and auto-submits after multiple violations.",
     " Note : The quiz questions have been created by Sudhakar with reference to previous years' TANCET question papers, IndiaBix, GeeksforGeeks, and ChatGPT."
   ].map((point, index) => (
     <li

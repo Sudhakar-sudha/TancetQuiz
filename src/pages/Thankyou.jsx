@@ -68,7 +68,7 @@ const ThankYou = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-purple-500 to-indigo-500 text-white px-6">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-purple-500 to-indigo-500 text-white px-6 pb-20">
       <motion.h1 className="text-5xl font-extrabold text-center" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.5 }}>
         🎉 Thank You! 🎉
       </motion.h1>

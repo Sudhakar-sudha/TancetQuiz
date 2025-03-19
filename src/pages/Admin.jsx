@@ -108,14 +108,16 @@ const Admin = () => {
       <table className="w-full border-collapse border">
         <thead>
           <tr className="bg-gray-200">
+          <th className="border p-2">S.NO</th>
             <th className="border p-2">Username</th>
             <th className="border p-2">Password</th>
             <th className="border p-2">Actions</th>
           </tr>
         </thead>
         <tbody>
-          {users.map((user) => (
+          {users.map((user , index) => (
             <tr key={user._id} className="border">
+              <td className="border p-2">{index+1}</td>
               <td className="border p-2">{user.username}</td>
               <td className="border p-2">{user.password}</td>
               <td className="border p-2">

@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2';
 import myImage1 from "/thumbsup.gif"
-
+import QuizSecurity from "./QuizSecurity";
 const showPopup = () => {
   Swal.fire({
       title: 'Submitted Successfullyy ! ',
@@ -49,7 +49,6 @@ const Quiz = () => {
 
     const completed = localStorage.getItem("quizCompleted");
     if (completed === "true") {
-      alert("You have already written the test!");
       navigate("/thank-you");
       return;
     }
@@ -175,20 +174,22 @@ setTimeout(() => {
 
   return (
     <div className="h-screen flex flex-col bg-green-100">
+    <QuizSecurity onAutoSubmit={handleAutoSubmit} />
+
       <header className="sticky top-0 left-0 right-0 bg-green-500 text-white p-4 flex justify-between items-center shadow-lg z-50">
-        <h1 className="text-xl font-bold">TANCET Model Quiz</h1>
+        <h1 className="text-xl font-bold">TANCET Mock Test</h1>
         <span className="text-lg font-semibold">{formatTime(timeLeft)}</span>
         <span className="text-lg">Welcome, {username}</span>
       </header>
 
       <div className="flex flex-1 h-full">
-        <div className="w-1/2 h-full overflow-y-auto p-4 bg-white shadow-lg">
+        <div className="w-4/5 h-full overflow-y-auto p-4 bg-white shadow-lg">
           <iframe src="/TANCET.pdf" className="w-full h-full rounded-lg shadow-lg" title="Quiz PDF" />
         </div>
 
-        <div className="w-1/2 h-full p-6 overflow-y-auto bg-white">
-          <h2 className="text-xl font-semibold mb-4">Choose the correct options:</h2>
-          <div className="grid grid-cols-2 gap-6">
+        <div className="w-1/5 h-full p-6 overflow-y-auto bg-white">
+          <h2 className=" font-semibold mb-4">Choose the correct options:</h2>
+          <div className="grid  gap-6">
             {questions.map((q) => (
               <div key={q.id} className="mb-4 flex items-center space-x-6">
                 <span className="text-lg font-medium">{q.id})</span>

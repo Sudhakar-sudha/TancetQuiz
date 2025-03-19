@@ -93,6 +93,7 @@ const UserResult = () => {
         <table className="min-w-full bg-white border border-gray-200 shadow-md">
           <thead>
             <tr className="bg-blue-500 text-white">
+            <th className="py-2 px-4 border">S.NO</th>
               <th className="py-2 px-4 border">Username</th>
               <th className="py-2 px-4 border">Total Score</th>
               <th className="py-2 px-4 border">Total Questions</th>
@@ -105,8 +106,9 @@ const UserResult = () => {
           </thead>
           <tbody>
             {students.length > 0 ? (
-              students.map((student) => (
+              students.map((student , index) => (
                 <tr key={student._id} className="text-center border-b hover:bg-gray-100">
+                  <td className="py-2 px-4 border">{index + 1}</td>
                   <td className="py-2 px-4 border">{student.username}</td>
                   <td className="py-2 px-4 border">{student.totalScore}</td>
                   <td className="py-2 px-4 border">{student.totalQuestions}</td>

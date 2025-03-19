@@ -66,7 +66,8 @@ import TermsAndCondition from "./pages/TermsandCondition";
 import Result from "./pages/Result";
 import GetStartedPage from "./pages/GetStarted";
 import WaitingPage from "./pages/Waiting";
-
+import WinnerPage from "./pages/WinnersPage"
+import UserResponses from "./pages/UserResponse";
 function App() {
   return (
     <Router>
@@ -80,7 +81,9 @@ function App() {
         <Route path="/admin-login" element={<AdminLogin />} />
         <Route path="/result" element={<Result />} />
         <Route path="/waiting" element={<WaitingPage   />} />
+        <Route path="/winners" element={<WinnerPage   />} />
         <Route path="/termsandcondition" element={<TermsAndCondition />} />
+        <Route path="/userresponse" element={<UserResponses />} />
         {/* Protected Admin Route */}
         <Route element={<ProtectedRoute />}>
           <Route path="/admin/*" element={<AdminPanel />} />
