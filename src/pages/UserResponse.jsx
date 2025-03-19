@@ -78,7 +78,7 @@ export default function UserResponse() {
 
   // Fetch all user responses
   useEffect(() => {
-    fetch("http://localhost:3000/api/quiz-submissions") // Use your correct backend URL
+    fetch("https://backendsampleclg.onrender.com/api/quiz-submissions") // Use your correct backend URL
       .then((res) => {
         if (!res.ok) {
           throw new Error(`Failed to fetch responses: ${res.status}`);
@@ -105,7 +105,7 @@ export default function UserResponse() {
     if (!window.confirm(`Are you sure you want to delete all responses from ${selectedUser}?`)) return;
 
     try {
-      const res = await fetch(`http://localhost:3000/api/quiz-submissions/delete/${selectedUser}`, {
+      const res = await fetch(`https://backendsampleclg.onrender.com/api/quiz-submissions/delete/${selectedUser}`, {
         method: "DELETE",
       });
 
